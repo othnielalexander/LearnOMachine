@@ -1,0 +1,64 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mini Project</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gallery/css/bootstrap.min.css' %}" >
+        <link rel="stylesheet" href="{% static 'gallery/css/custom.css' %}" >
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="/gallery/">LearnOmachine</a>
+          </div>
+            <ul class="list-unstyled">
+                <li class="list-unstyled">
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <br>
+                        <button class="btn btn-danger" type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container detailContent">
+            <br>
+            <br>
+            <div class="text-center" id="imageDetail">
+                    <img class="figure-img img-fluid rounded" src="{% static photo.get_source %}">
+                    <figcaption class="figure-caption">
+                        <p>Accuracy of data predicted : 95.5 % <br/></p>
+
+                        <p>1 unit of Gold ETF is equal to 1 gram of Gold.<br/>
+                        So you can sell the units as per your requirement and convert gold ETF to<br/>
+                        Physical gold by buying the gold in the market.</p>
+
+                    <p>Standard gold rate of 22K : ₹ 3,125 / gram <br/>
+                        Standard gold rate of 24K : ₹ 3,281 / gram</p>
+
+                        <p>Average Predicted Price of 22K Gold in ₹ : 121.82 Gold ETF x ₹ 3,125 / gram = ₹ 3,78,125<br/>
+                            Average Predicted Price of 24K Gold in ₹ : 121.82 Gold ETF x ₹ 3,281 / gram = ₹ 3,99,691</p>
+                        </p>
+                    </figcaption>
+            </div>
+        </div>
+
+         <!-- Footer -->
+        <footer class="py-5 bg-light">
+          <div class="container">
+            <p class="m-0 text-center"></p>
+          </div>
+          <!-- /.container -->
+        </footer>
+
+        <script src="{% static 'gallery/js/jquery.min.js' %}"></script>
+        <script src="{% static 'gallery/js/popper.min.js' %}"></script>
+        <script src="{% static 'gallery/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'gallery/js/custom.js' %}"></script>
+    </body>
+</html>

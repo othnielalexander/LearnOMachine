@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<br>
+<br>
+        <h1 align="center">Signup</h1>
+        <form class="site-form" action="#" method="post">
+            <div align="center">
+            {% csrf_token %} <br>
+            {{form}} <br>
+                <br>
+            <input type="submit" class="btn btn-primary" value="Signup">
+            </div>
+        </form>
+<br>
+<br>
+{% endblock %}
